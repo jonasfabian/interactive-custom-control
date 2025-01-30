@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+javafx {
+    version = "17"
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+application {
+    mainClass = 'custom_control.stop_watch.Starter'
+}
+
+group 'ch.fhnw'
+version '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ["src/main/java", "src/main/resources"]
+        }
+    }
+}
+
+compileJava {
+    options.encoding    = 'UTF-8'
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'fr.brouillard.oss:cssfx:11.5.1'
+    implementation 'org.openjfx:javafx-controls:17:mac-aarch64'
+    implementation 'org.openjfx:javafx-fxml:17:mac-aarch64'
+    implementation 'org.openjfx:javafx-base:17:mac-aarch64'
+    implementation 'org.openjfx:javafx-graphics:17:mac-aarch64'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+}
+
+test {
+	useJUnitPlatform()
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}

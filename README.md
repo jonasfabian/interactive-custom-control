@@ -1,1 +1,5 @@
-# interactive-custom-control
+# Interactive Custom Control
+
+Interactive custom control (Stopwatch) in JavaFX
+
+![Screenshot](demo.png)
